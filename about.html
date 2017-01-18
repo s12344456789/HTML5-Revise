@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>文學天地 - 影片推薦</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+
+<script language="javascript" type="text/javascript">
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
+	<title>Youtube Data API</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+
+<div id="templatemo_wrapper">
+
+	<span class="bg_top"></span>
+    <span class="bg_bottom"></span>
+
+	<div id="templatemo_menu">
+        <ul>
+          <li><a href="index.html">主頁</a></li>
+          <li><a href="about.html" class="current">影片推薦</a></li>
+          <li><a href="gallery.html">好文分享</a></li>
+          <li class="last"><a href="blog.html">走入文學</a></li>
+        </ul>
+	</div> <!-- end of menu -->
+    
+    <div id="templatemo_header">
+		<div id="site_title"><h1><a href="#"><i>影片推薦</i></a></h1></div>
+
+	</div> <!-- end of header -->
+    
+    <div id="templatemo_main">
+    	<div class="cbox_fw">
+        	<h2>武俠音樂</h2>
+            <a href="#"><img src="images/templatemo_image_07.jpg" alt="image" class="image_frame image_fl" /></a>
+          <p>許多影視劇源自於小說，透過影音媒介也讓更多人能感受到文學的魅力。基於私心對武俠的熱愛，這裡就盤點幾首金庸劇的歌曲～</p>
+			<a href="https://www.youtube.com/playlist?list=PLUSrSZCf9WlHIptf1BrSOWTS7P3L5fUIX" class="more float_r"><span>&gt;&gt;</span>在youtube上觀看</a>
+          <div class="cleaner"></div>
+        </div>
+	<div id="sidebar2">
+        
+        
+        </div>
+        
+        <div id="content2">
+
+<div id="VideoThumbs"><!-- 這裡會產生YouTube Thumbs列出影片 --></div>
+	
+	<script>
+		var apiKey = "AIzaSyBaGYWV_n_feFf-1fLjW188-Av7ADi8kL8";
+		function getVideos(pid, apiKey) {
+			// PlaylistItems: list 語法參見 https://developers.google.com/youtube/v3/docs/playlistItems/list
+			$.get("https://www.googleapis.com/youtube/v3/playlistItems", {
+				part: "snippet,contentDetails",
+				maxResults: 50,
+				playlistId: pid,
+				key: apiKey},
+				function (data) {
+					// 傳回值參見 https://developers.google.com/youtube/v3/docs/playlistItems#resource-representation
+					$.each(data.items, function (i, item) {
+						var str = '<div style="float:left;font-size:small;margin:5px;">';
+						str += '<a href="https://youtu.be/' + item.snippet.resourceId.videoId + '" target="_blank"><img src="' + item.snippet.thumbnails.medium.url + '" /><br />' + item.snippet.title + '</a><br />';
+						if (item.contentDetails.note !== undefined) str += '<a href="' + item.contentDetails.note + '" target="_blank">延伸閱讀</a><br />';
+						str += '</div>';
+						document.getElementById("VideoThumbs").innerHTML += str;
+					})
+				}
+			);
+		}
+		
+		getVideos("PLUSrSZCf9WlHIptf1BrSOWTS7P3L5fUIX", apiKey)	// @武俠劇音樂
+		
+	</script>	
+              <div class="cleaner"></div>
+            
+            
+      </div>
+        
+        <div class="cleaner"></div>
+    </div> <!-- end of main -->
+    <div id="templatemo_main_bottom"></div>
+    
+    <div id="templatemo_footer">
+        <a href="https://www.facebook.com/liu.d.qian">我的FB</a><!-- Credit: www.templatemo.com -->
+        
+        <div class="cleaner"></div>
+    </div>
+
+</div> <!-- end of wrapper -->
+<!-- templatemo 287 ancient -->
+<!-- 
+Ancient Template 
+http://www.templatemo.com/preview/templatemo_287_ancient 
+-->
+</body>
+</html>

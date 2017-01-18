@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>文學天地 - 走入文學</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+
+<script language="javascript" type="text/javascript">
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+	
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body>
+
+<div id="templatemo_wrapper">
+
+	<span class="bg_top"></span>
+    <span class="bg_bottom"></span>
+
+	<div id="templatemo_menu">
+        <ul>
+          <li><a href="index.html">主頁</a></li>
+          <li><a href="about.html">影片推薦</a></li>
+          <li><a href="gallery.html">好文分享</a></li>
+          <li class="last"><a href="blog.html" class="current">走入文學</a></li>
+        </ul>
+	</div> <!-- end of menu -->
+    
+    <div id="templatemo_header">
+		<div id="site_title"><h1><a href="#"><i>走入文學</i></a></h1></div>
+	</div> <!-- end of header -->
+    
+    <div id="templatemo_main">
+	    	<div class="cbox_fw">
+        	<h2><font size='6'>閱讀地點</font></h2>
+            <a href="#"><img src="images/templatemo_image_10.jpg" alt="image" class="image_frame image_fl" /></a>
+           <p>以下介紹中興大學附近幾個圖書館及書店～點擊紅色地標會有詳細資訊。大家快去閱讀吧！<br>（把右下角的小黃人拉上去可以開啟街景服務哦！）</p>
+            <div class="cleaner"></div>
+        </div>
+      <div id="sidebar2">
+            
+        </div>
+        
+<div id="map" style="width: 900px; height: 750px"></div>
+    <script>
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 24.121527 , lng: 120.673637},
+    zoom: 16
+  });
+  
+  var marker1 = new google.maps.Marker({
+    position: {lat: 24.119857, lng: 120.674302},
+    map: map,
+    title: '中興大學圖書館'
+  });
+  
+  
+  var marker2 = new google.maps.Marker({
+    position: {lat:24.119997, lng:120.669661},
+    map: map,
+    title: '臺中市立圖書館南區分館'
+  });
+  
+  var marker3 = new google.maps.Marker({
+    position: {lat: 24.127083, lng: 120.670510},
+    map: map,
+    title: '國立公共資訊圖書館'
+  });
+  
+  var marker4 = new google.maps.Marker({
+    position: {lat: 24.124656, lng: 120.679047},
+    map: map,
+    title: '興大書局'
+  });
+  
+  var marker5 = new google.maps.Marker({
+    position: {lat: 24.114946, lng: 120.679938},
+    map: map,
+    title: '諾貝爾圖書城'
+  });
+  
+  var contentString1 = '<div id="content4">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h4 id="firstHeading" class="firstHeading"><font color="black">中興大學圖書館</h4>'+
+      '<div id="bodyContent">'+
+      '<p>402台中市南區興大路145號</p>'+
+      '</div>'+
+      '</div>';
+  
+  var infowindow1 = new google.maps.InfoWindow({
+    content: contentString1
+  });
+  
+  marker1.addListener('click', function() {
+    infowindow1.open(map, marker1);
+  });
+  
+  var contentString2 =  '<div id="content4">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h4 id="firstHeading" class="firstHeading"><font color="black">臺中市立圖書館南區分館</h4>'+
+      '<div id="bodyContent">'+
+      '<p>40246台中市南區五權南路335號</p>'+
+      '</div>'+
+      '</div>';
+  
+  var infowindow2 = new google.maps.InfoWindow({
+    content: contentString2
+  });
+  
+  marker2.addListener('click', function() {
+    infowindow2.open(map, marker2);
+  });
+  
+  var contentString3 = '<div id="content4">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h4 id="firstHeading" class="firstHeading"><font color="black">國立公共資訊圖書館</h4>'+
+      '<div id="bodyContent">'+
+      '<p>40246台中市南區五權南路100號</p>'+
+      '</div>'+
+      '</div>';
+  
+  var infowindow3 = new google.maps.InfoWindow({
+    content: contentString3
+  });
+  
+  marker3.addListener('click', function() {
+    infowindow3.open(map, marker3);
+  });
+  
+  var contentString4 = '<div id="content4">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h4 id="firstHeading" class="firstHeading"><font color="black">興大書局</h4>'+
+      '<div id="bodyContent">'+
+      '<p>40246台中市南區國光路236號</p>'+
+      '</div>'+
+      '</div>';
+  
+  var infowindow4 = new google.maps.InfoWindow({
+    content: contentString4
+  });
+  
+  marker4.addListener('click', function() {
+    infowindow4.open(map, marker4);
+  });
+  
+  var contentString5 = '<div id="content4">'+
+      '<div id="siteNotice">'+
+      '</div>'+
+      '<h4 id="firstHeading" class="firstHeading"><font color="black">諾貝爾圖書城</h4>'+
+      '<div id="bodyContent">'+
+      '<p>412台中市大里區大明路391之1號</p>'+
+      '</div>'+
+      '</div>';
+  
+  var infowindow5 = new google.maps.InfoWindow({
+    content: contentString5
+  });
+  
+  marker5.addListener('click', function() {
+    infowindow5.open(map, marker5);
+  });
+  
+}
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYvdvwb6-13cF8_2yaB9r8WmStpIBXuV8&signed_in=true&callback=initMap"
+        async defer></script>
+        
+        <div class="cleaner"></div>
+    </div> <!-- end of main -->
+    <div id="templatemo_main_bottom"></div>
+    
+    <div id="templatemo_footer">
+        <a href="https://www.facebook.com/liu.d.qian">我的FB</a><!-- Credit: www.templatemo.com -->
+        
+        <div class="cleaner"></div>
+    </div>
+
+</div> <!-- end of wrapper -->
+<!-- templatemo 287 ancient -->
+<!-- 
+Ancient Template 
+http://www.templatemo.com/preview/templatemo_287_ancient 
+-->
+
+</body>
+</html>

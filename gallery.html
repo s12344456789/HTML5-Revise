@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>文學天地 - 好文分享</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+
+<script language="javascript" type="text/javascript">
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+
+<div id="templatemo_wrapper">
+
+	<span class="bg_top"></span>
+    <span class="bg_bottom"></span>
+
+	<div id="templatemo_menu">
+        <ul>
+          <li><a href="index.html">主頁</a></li>
+          <li><a href="about.html">影片推薦</a></li>
+          <li><a href="gallery.html" class="current">好文分享</a></li>
+          <li class="last"><a href="blog.html">走入文學</a></li>
+        </ul>
+	</div> <!-- end of menu -->
+    
+    <div id="templatemo_header">
+		<div id="site_title2"><h1><a href="#"><i>好文分享</i></a></h1></div>
+	</div> <!-- end of header -->
+    
+    <div id="templatemo_main2">
+     	<div class="cbox_fw">
+        	<h2><font size='6'>痞客邦的熱門連載</font></h2>
+            <a href="#"><img src="images/templatemo_image_09.jpg" alt="image" class="image_frame image_fl" /></a>
+           <p>台灣使用痞客邦的人數很多，在痞客邦上也常常能看見廣大網友寫出許多精采的文章，在這<br>邊就讓我們來看看痞客邦熱門的連載小說吧！</p>
+            <div class="cleaner"></div>
+        </div>
+        
+        <div id="sidebar">
+        
+        	<div id="nne">
+            
+	        	<h3><font size='5'>網站簡介</font></h3>
+                <ul class="nne_box">
+                	<li><span>個人格言</span>「筆為吾家，字是我身。」</li>
+                    <li><span>喜好文學</span>以金庸、古龍為主，多讀武俠小說，期盼未來能寫出獨樹一幟的武俠作品。</li>
+                    <li><span>網站理念</span>推薦好的文學相關資料～</li>
+                </ul>
+                
+			</div>
+            
+        
+        </div>
+        
+        <div id="content3">
+        
+             <div class="cbox_last">
+                   <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+	  
+	<script>
+	var xmlhttp = new XMLHttpRequest();
+	var url = "https://emma.pixnet.cc/mainpage/blog/categories/hot/13?page=1&per_page=10&api_version=2&format=json";
+	xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+			var myArr = JSON.parse(xmlhttp.responseText);
+			myFunction(myArr);
+		}
+	}
+	xmlhttp.open("GET", url, true);
+	xmlhttp.send();
+	function myFunction(arr) {
+		var data = arr.articles;
+		var out = "";
+		var i;
+		for (i = 0; i < data.length; i++) {
+			
+			out += 	'<li class="collection-item avatar"><img src="'+data[i].thumb+ '"alt="" class="circle">\
+				<span class="title">'+'<font color="blue">'+data[i].title+'</font>'+'</span>'+'<p>'+data[i].summary+'<br>';
+				
+				
+				if ( data[i].tags.length != 0 )
+				{
+				out +='<b>'+'Tags: '+'</b>';
+				for (j = 0; j < data[i].tags.length; j++) {
+					
+					out += data[i].tags[j].tag + ', '};
+				}	
+			out +='</p>\<a href="'+data[i].link+'" class="secondary-content"><i class="material-icons">grade</i></a></li>';
+			
+			
+		}
+		document.getElementById("pixnet-stuff").innerHTML = out;
+	}
+	</script>
+	  
+	
+	<ul class="collection" id="pixnet-stuff">			
+	</ul>  
+            </div>
+            
+            <div class="cleaner h30"></div>
+                   
+        </div>
+        
+        <div class="cleaner"></div>
+    </div> <!-- end of main -->
+    <div id="templatemo_main_bottom"></div>
+    
+    <div id="templatemo_footer">
+        <a href="https://www.facebook.com/liu.d.qian">我的FB</a><!-- Credit: www.templatemo.com -->
+        
+        <div class="cleaner"></div>
+    </div>
+
+</div> <!-- end of wrapper -->
+<!-- templatemo 287 ancient -->
+<!-- 
+Ancient Template 
+http://www.templatemo.com/preview/templatemo_287_ancient 
+-->
+</body>
+</html>
